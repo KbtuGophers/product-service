@@ -39,7 +39,7 @@ func (h *CategoryHandler) Routes() chi.Router {
 //	@Tags		categories
 //	@Accept		json
 //	@Produce	json
-//	@Success	200				{array}		author.Response
+//	@Success	200				{array}		category.Response
 //	@Failure	500				{object}	status.Response
 //	@Router		/categories 	[get]
 func (h *CategoryHandler) list(w http.ResponseWriter, r *http.Request) {

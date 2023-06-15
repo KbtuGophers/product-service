@@ -110,3 +110,19 @@
 {"level":"info","ts":1686821455.0664046,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
 {"level":"warn","ts":1686821519.5888765,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
 {"level":"info","ts":1686821519.736206,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
+{"level":"warn","ts":1686826542.7474284,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"error","ts":1686826543.7700946,"caller":"app/app.go:40","msg":"ERR_INIT_REPOSITORY","error":"dial tcp: lookup dpg-ci034n64dad35tqu8la0-a: no such host","stacktrace":"product/internal/app.Run\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/internal/app/app.go:40\nmain.main\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/main.go:6\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:250"}
+{"level":"warn","ts":1686826642.1801367,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"error","ts":1686826643.209367,"caller":"app/app.go:40","msg":"ERR_INIT_REPOSITORY","error":"dial tcp: lookup dpg-ci034n64dad35tqu8la0-a: no such host","stacktrace":"product/internal/app.Run\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/internal/app/app.go:40\nmain.main\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/main.go:6\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:250"}
+{"level":"warn","ts":1686826664.4945862,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"error","ts":1686826664.5589564,"caller":"app/app.go:40","msg":"ERR_INIT_REPOSITORY","error":"pq: \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \"database\" \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd","stacktrace":"product/internal/app.Run\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/internal/app/app.go:40\nmain.main\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/main.go:6\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:250"}
+{"level":"warn","ts":1686826702.7171648,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"error","ts":1686826702.774672,"caller":"app/app.go:40","msg":"ERR_INIT_REPOSITORY","error":"pq: \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \"database\" \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd","stacktrace":"product/internal/app.Run\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/internal/app/app.go:40\nmain.main\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/main.go:6\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:250"}
+{"level":"warn","ts":1686826773.8633163,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"info","ts":1686826773.9985535,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
+{"level":"warn","ts":1686826921.568813,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"info","ts":1686826921.7070143,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
+{"level":"warn","ts":1686827112.4682753,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"info","ts":1686827112.6483102,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
+{"level":"warn","ts":1686827523.8293529,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"info","ts":1686827523.9709077,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}

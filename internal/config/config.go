@@ -30,6 +30,7 @@ type (
 		WriteTimeout       time.Duration
 		IdleTimeout        time.Duration
 		MaxHeaderMegabytes int
+		Schema             string
 	}
 
 	ClientConfig struct {

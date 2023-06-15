@@ -1,0 +1,355 @@
+definitions:
+  category.Request:
+    properties:
+      name:
+        type: string
+      parent_id:
+        type: string
+    type: object
+  category.Response:
+    properties:
+      childs:
+        items:
+          $ref: '#/definitions/category.Response'
+        type: array
+      id:
+        type: string
+      name:
+        type: string
+      parent_id:
+        type: string
+    type: object
+  product.Request:
+    properties:
+      barcode:
+        type: string
+      brand_name:
+        type: string
+      category_id:
+        type: string
+      cost:
+        type: integer
+      description:
+        type: string
+      id:
+        type: string
+      image:
+        type: string
+      is_weighted:
+        type: boolean
+      measure:
+        type: string
+      name:
+        type: string
+      producer_country:
+        type: string
+    type: object
+  product.Response:
+    properties:
+      barcode:
+        type: string
+      brand_name:
+        type: string
+      category_id:
+        type: string
+      cost:
+        type: integer
+      description:
+        type: string
+      id:
+        type: string
+      image:
+        type: string
+      is_weighted:
+        type: boolean
+      measure:
+        type: string
+      name:
+        type: string
+      producer_country:
+        type: string
+    type: object
+  status.Response:
+    properties:
+      data: {}
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+info:
+  contact: {}
+paths:
+  /categories:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/category.Response'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: List of categories from the database
+      tags:
+      - categories
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: body param
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/category.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/category.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/status.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: Add a new author to the database
+      tags:
+      - categories
+  /categories/{id}:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: path param
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/status.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: Delete the category from the database
+      tags:
+      - categories
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: path param
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/category.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/status.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: Read the category from the database
+      tags:
+      - categories
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: path param
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: body param
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/category.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/status.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/status.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: Update the category in the database
+      tags:
+      - categories
+  /products:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/product.Response'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: List of products from the database
+      tags:
+      - products
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: body param
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/product.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/product.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/status.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: Add a new product to the database
+      tags:
+      - products
+  /products/{id}:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: path param
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/status.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: Delete the product from the database
+      tags:
+      - products
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: path param
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/product.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/status.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: Read the product from the database
+      tags:
+      - products
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: path param
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: body param
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/product.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/status.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/status.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/status.Response'
+      summary: Update the product in the database
+      tags:
+      - products
+swagger: "2.0"

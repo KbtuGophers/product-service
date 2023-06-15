@@ -3,6 +3,9 @@ package handler
 import (
 	"github.com/go-chi/chi/v5"
 	httpSwagger "github.com/swaggo/http-swagger/v2"
+	"net/url"
+	"product/docs"
+	"product/internal/config"
 	"product/internal/handler/http"
 	"product/internal/service"
 	"product/pkg/server/router"
@@ -10,6 +13,7 @@ import (
 
 type Dependencies struct {
 	Service *service.Service
+	Configs config.Config
 }
 
 // Configuration is an alias for a function that will take in a pointer to a Handler and modify it
@@ -18,8 +22,7 @@ type Configuration func(h *Handler) error
 // Handler is an implementation of the Handler
 type Handler struct {
 	dependencies Dependencies
-
-	HTTP *chi.Mux
+	HTTP         *chi.Mux
 }
 
 // New takes a variable amount of Configuration functions and returns a new Handler
@@ -62,8 +65,19 @@ func WithHTTPHandler() Configuration {
 		// Create the http handler, if we needed parameters, such as connection strings they could be inputted here
 		h.HTTP = router.New()
 
+		docs.SwaggerInfo.BasePath = "/api/v1"
+		docs.SwaggerInfo.Host = h.dependencies.Configs.HTTP.Host
+		docs.SwaggerInfo.Schemes = []string{h.dependencies.Configs.HTTP.Schema}
+		docs.SwaggerInfo.Title = "Product Service"
+
+		swaggerURL := url.URL{
+			Scheme: h.dependencies.Configs.HTTP.Schema,
+			Host:   h.dependencies.Configs.HTTP.Host,
+			Path:   "swagger/doc.json",
+		}
+
 		h.HTTP.Get("/swagger/*", httpSwagger.Handler(
-			httpSwagger.URL("http://localhost/swagger/doc.json"),
+			httpSwagger.URL(swaggerURL.String()),
 		))
 
 		authorHandler := http.NewCategoryHandler(h.dependencies.Service)
