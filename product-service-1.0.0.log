@@ -134,3 +134,5 @@
 {"level":"info","ts":1686829661.9611917,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
 {"level":"warn","ts":1686830011.5327082,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
 {"level":"info","ts":1686830011.6689587,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
+{"level":"warn","ts":1686833101.7029347,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"info","ts":1686833101.9099324,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
