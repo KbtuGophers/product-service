@@ -128,3 +128,9 @@
 {"level":"info","ts":1686827523.9709077,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
 {"level":"warn","ts":1686828059.0735888,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
 {"level":"info","ts":1686828059.2275991,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
+{"level":"warn","ts":1686829589.2584908,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"error","ts":1686829589.2596445,"caller":"app/app.go:40","msg":"ERR_INIT_REPOSITORY","error":"sql: undefined data source name ","stacktrace":"product/internal/app.Run\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/internal/app/app.go:40\nmain.main\n\tC:/Users/User/go/src/github.com/KbtuGophers/product/main.go:6\nruntime.main\n\tC:/Program Files/Go/src/runtime/proc.go:250"}
+{"level":"warn","ts":1686829661.8195395,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"info","ts":1686829661.9611917,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
+{"level":"warn","ts":1686830011.5327082,"caller":"log/log.go:37","msg":"Logger sync fail","error":"sync /dev/stdout: The handle is invalid."}
+{"level":"info","ts":1686830011.6689587,"caller":"server/server.go:47","msg":"http server started on http://localhost:80"}
